@@ -11,6 +11,15 @@ const getUsers = (res) => {
     }) 
 }
 
+const getById = (req, res) => {
+    Models.User.findById(req.params.id)
+        .then(data => res.send({result: 200, data: data}))
+        .catch(err => {
+            console.log(err);
+            res.send({result: 500, error: err.message})
+    }) 
+}
+
 const createUser = (data, res) => {
  // creates a new user using JSON data POSTed in request body
  console.log(data)
@@ -45,5 +54,5 @@ const deleteUser = (req, res) => {
    }
    
 module.exports = {
- getUsers, createUser
+ getUsers, createUser, updateUser, deleteUser, getById,
 }

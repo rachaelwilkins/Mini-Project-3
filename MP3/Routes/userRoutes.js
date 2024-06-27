@@ -20,5 +20,13 @@ router.delete('/:id', (req, res) => {
  Controllers.userController.deleteUser(req, res)
 })
 
+router.get('/init', (req, res) => {
+  Controllers.initialController.initEpisodes(req, res)
+ })
+
+ router.get('/:id', (req, res) => {
+  Controllers.userController.getById(req, res)
+ }) 
+
 
 module.exports = router;
