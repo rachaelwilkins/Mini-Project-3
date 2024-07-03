@@ -13,3 +13,4 @@ const userSchema = new Schema({
 module.exports = mongoose.model("user", userSchema);
 
 // haven't included the thumbnail data in this deliberately. 
+   //commit
